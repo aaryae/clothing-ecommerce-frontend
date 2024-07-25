@@ -1,17 +1,15 @@
 import { image } from '@config/constant/image'
+import Heading from '@ui/user/atoms/Heading'
 
 function App() {
   return (
     <>
       <div className='p-10 m-10'>
+        <Heading
+          value='
+Sustainable. Beautiful. Ethical.'
+        />
         <img src={image.frontmen} alt='' />
-
-        <h1 className='font-1'> The quick brown fox jumps over lazy dog</h1>
-        <h1 className='font-2'> The quick brown fox jumps over lazy dog</h1>
-
-        <h1 className='font-3'> The quick brown fox jumps over lazy dog</h1>
-
-        <h1 className='font-4'> The quick brown fox jumps over lazy dog</h1>
       </div>
     </>
   )
