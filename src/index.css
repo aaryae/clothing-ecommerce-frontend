@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'helvetica';
+  src: url('./assets/fonts/helvetica-neue-5/HelveticaNeueThin.otf') format('opentype');
+}
+
+* {
+  font-family: 'helvetica';
+  font-weight: 100;
+}
