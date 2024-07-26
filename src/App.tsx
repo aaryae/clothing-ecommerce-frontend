@@ -1,16 +1,11 @@
-import { image } from '@config/constant/image'
-import Heading from '@ui/user/atoms/Heading'
+import Banner from '@ui/landingPage/organsims/Banner'
+import Navbar from '@ui/landingPage/organsims/Navbar'
 
 function App() {
   return (
     <>
-      <div className='p-10 m-10'>
-        <Heading
-          value='
-Sustainable. Beautiful. Ethical.'
-        />
-        <img src={image.frontmen} alt='' />
-      </div>
+      <Banner />
+      <Navbar />
     </>
   )
 }

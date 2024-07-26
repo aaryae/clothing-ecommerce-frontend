@@ -7,7 +7,16 @@
   src: url('./assets/fonts/helvetica-neue-5/HelveticaNeueThin.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'helvetica-secondary';
+  src: url('./assets/fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('opentype');
+} 
+
 * {
   font-family: 'helvetica';
-  font-weight: 100;
+  transition:0.2s ease-in-out;
+}
+
+.font-secondary{
+  font-family:'helvetica-secondary'
 }

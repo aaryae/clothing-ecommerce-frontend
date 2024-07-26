@@ -4,8 +4,15 @@ export default {
   theme: {
     extend: {
       letterSpacing: {
-        custom: '0.4rem',
+        custom: '0.3rem',
       },
+      fontFamily: {
+        poppins: 'Poppins, sans-serif',
+      },
+      fontSize:{
+        custom: '0.775rem' 
+
+      }
     },
   },
   plugins: [],
