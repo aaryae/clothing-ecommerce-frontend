@@ -1,5 +1,13 @@
+import Sectionintro from '../organsims/Sectionintro'
+import Sectionstorecategories from '../organsims/Sectionstorecategories'
+
 const Landingpage = () => {
-  return <div>LandingPage</div>
+  return (
+    <>
+      <Sectionintro />
+      <Sectionstorecategories />
+    </>
+  )
 }
 
 export default Landingpage

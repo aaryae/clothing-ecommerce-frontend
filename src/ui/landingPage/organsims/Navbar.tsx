@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* navmenu */}
-      <nav className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[28px]'>
+      <nav className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[26px]'>
         <Logo />
         <div className='flex gap-20 justify-between'>
           <Navlist />
