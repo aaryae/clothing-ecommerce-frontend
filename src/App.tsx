@@ -1,18 +1,23 @@
-import { image } from '@config/constant/image'
+import Sectionintro from '@ui/landingPage/organsims/Sectionintro'
+import About from '@ui/landingPage/pages/About'
+import Landingtemplate from '@ui/landingPage/templates/Landingtemplate'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Landingtemplate />,
+      children: [
+        { index: true, element: <Sectionintro /> },
+        { path: '/about', element: <About /> },
+      ],
+    },
+  ])
+
   return (
     <>
-      <div className='p-10 m-10'>
-        <img src={image.frontmen} alt='' />
-
-        <h1 className='font-1'> The quick brown fox jumps over lazy dog</h1>
-        <h1 className='font-2'> The quick brown fox jumps over lazy dog</h1>
-
-        <h1 className='font-3'> The quick brown fox jumps over lazy dog</h1>
-
-        <h1 className='font-4'> The quick brown fox jumps over lazy dog</h1>
-      </div>
+      <RouterProvider router={router} />
     </>
   )
 }
