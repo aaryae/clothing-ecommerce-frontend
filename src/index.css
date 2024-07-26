@@ -10,13 +10,19 @@
 @font-face {
   font-family: 'helvetica-secondary';
   src: url('./assets/fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('opentype');
-} 
+}
 
 * {
   font-family: 'helvetica';
-  transition:0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  list-style: none;
+  text-decoration: none;
 }
 
-.font-secondary{
-  font-family:'helvetica-secondary'
+.font-secondary {
+  font-family: 'helvetica-secondary';
+}
+
+body {
+  height: 200vh;
 }

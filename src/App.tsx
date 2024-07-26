@@ -1,11 +1,23 @@
-import Banner from '@ui/landingPage/organsims/Banner'
-import Navbar from '@ui/landingPage/organsims/Navbar'
+import Sectionintro from '@ui/landingPage/organsims/Sectionintro'
+import About from '@ui/landingPage/pages/About'
+import Landingtemplate from '@ui/landingPage/templates/Landingtemplate'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Landingtemplate />,
+      children: [
+        { index: true, element: <Sectionintro /> },
+        { path: '/about', element: <About /> },
+      ],
+    },
+  ])
+
   return (
     <>
-      <Banner />
-      <Navbar />
+      <RouterProvider router={router} />
     </>
   )
 }

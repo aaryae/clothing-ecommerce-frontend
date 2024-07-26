@@ -9,7 +9,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='flex justify-between p-4 px-7 w-full'>
+      {/* navmenu */}
+      <nav className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[28px]'>
         <Logo />
         <div className='flex gap-20 justify-between'>
           <Navlist />
@@ -17,15 +18,14 @@ const Navbar = () => {
             <p className='m-auto'>Log In</p>
             <ShoppingBag strokeWidth={0.5} />
           </div>
-          <div onClick={() => toggleMenuOpen()} className='flex md:hidden'>
+          <div onClick={() => toggleMenuOpen()} className='flex md:hidden cursor-pointer'>
             <AlignLeft strokeWidth={0.5} />
           </div>
         </div>
       </nav>
-
-      {/* Overlay */}
+      {/* Overlay : background blur when sidebar is open  */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`md:hidden  block fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => toggleMenuOpen()}
       ></div>
 
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div
         className={`fixed md:hidden top-0 right-0 h-screen w-1/2 bg-[#ede5df] transition-transform duration-300 ease-in-out transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        <div onClick={() => toggleMenuOpen()} className='absolute top-0 right-0 p-5'>
+        <div onClick={() => toggleMenuOpen()} className='absolute top-0 right-0 p-5 cursor-pointer'>
           <X color='#870003' strokeWidth={0.5} />
         </div>
         <ul className='text-sm flex flex-col justify-center text-center m-auto h-full gap-5'>
