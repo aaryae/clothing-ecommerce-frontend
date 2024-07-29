@@ -1,19 +1,18 @@
 import { Outlet } from 'react-router-dom'
 import Banner from '../organsims/Banner'
-import Footer from '../organsims/Footer'
 import Navbar from '../organsims/Navbar'
 
-const Landingtemplate = () => {
+const LandingTemplate = () => {
   return (
     <div className='flex flex-col'>
-      <div className='z-10'>
+      <div className='z-50'>
         <Banner />
         <Navbar />
       </div>
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
 
-export default Landingtemplate
+export default LandingTemplate

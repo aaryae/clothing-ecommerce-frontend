@@ -1,35 +1,35 @@
-import Headingsecondary from '../atoms/Headingsecondary'
-import Navitem from '../atoms/Navitem'
+import HeadingSecondary from '../atoms/HeadingSecondary'
+import NavItem from '../atoms/NavItem'
 
 const Footer = () => {
   return (
     <div className='flex bg-[#fcf6f2] p-4'>
       <div className='w-1/5 text-center'>
-        <Headingsecondary value='Customer Care' />
+        <HeadingSecondary value='Customer Care' />
         <br />
-        <Navitem value='FAQ' />
-        <Navitem value='Shipping & Returns' />
-        <Navitem value='Store Policy' />
+        <NavItem value='FAQ' />
+        <NavItem value='Shipping & Returns' />
+        <NavItem value='Store Policy' />
       </div>
       <div className='w-1/5 text-center'>
-        <Headingsecondary value='Follow Us' />
+        <HeadingSecondary value='Follow Us' />
         <br />
-        <Navitem value='Instagram' />
-        <Navitem value='Twitter' />
-        <Navitem value='Facebook' />
-        <Navitem value='Contact' />
+        <NavItem value='Instagram' />
+        <NavItem value='Twitter' />
+        <NavItem value='Facebook' />
+        <NavItem value='Contact' />
       </div>
       <div className='w-1/5 text-center'>
-        <Headingsecondary value='The Company' />
+        <HeadingSecondary value='The Company' />
         <br />
-        <Navitem value='About' />
-        <Navitem value='Sustainability' />
-        <Navitem value='Accessibility' />
-        <Navitem value='Store Locator' />
+        <NavItem value='About' />
+        <NavItem value='Sustainability' />
+        <NavItem value='Accessibility' />
+        <NavItem value='Store Locator' />
       </div>
       <div className='w-2/5 text-center'>
         <br />
-        <Headingsecondary value='Sign up for special offers' />
+        <HeadingSecondary value='Sign up for special offers' />
         <label htmlFor='email' className='block mt-2'>
           Email
         </label>

@@ -1,8 +1,8 @@
 import useToggle from '@hooks/useToggle'
 import { AlignLeft, ShoppingBag, X } from 'lucide-react'
-import Navitem from '../atoms/Navitem'
+import NavItem from '../atoms/NavItem'
 import Logo from '../molecules/Logo'
-import Navlist from '../molecules/Navlist'
+import NavList from '../molecules/NavList'
 
 const Navbar = () => {
   const [menuOpen, toggleMenuOpen] = useToggle(false)
@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[26px]'>
         <Logo />
         <div className='flex gap-20 justify-between'>
-          <Navlist />
+          <NavList />
           <div className='hidden md:flex gap-4 m-auto'>
             <p className='m-auto'>Log In</p>
             <ShoppingBag strokeWidth={0.5} />
@@ -36,12 +36,12 @@ const Navbar = () => {
         <div onClick={() => toggleMenuOpen()} className='absolute top-0 right-0 p-5 cursor-pointer'>
           <X color='#870003' strokeWidth={0.5} />
         </div>
-        <ul className='text-sm flex flex-col justify-center text-center m-auto h-full gap-5'>
-          <Navitem value='Home' />
-          <Navitem value='Women' />
-          <Navitem value='Men' />
-          <Navitem value='Shop All' />
-          <Navitem value='About' />
+        <ul className='text-sm flex flex-col justify-center text-center m-auto h-screen gap-5'>
+          <NavItem value='Home' />
+          <NavItem value='Women' />
+          <NavItem value='Men' />
+          <NavItem value='Shop All' />
+          <NavItem value='About' />
         </ul>
       </div>
     </>
