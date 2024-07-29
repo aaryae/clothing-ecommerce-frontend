@@ -1,10 +1,10 @@
 import Button from '../atoms/Button'
 import Heading from '../atoms/Heading'
 
-const Sectionintro = () => {
+const SectionIntro = () => {
   return (
     <>
-      <div className='w-full text-center py-28'>
+      <div className='w-full text-center pt-28 pb-12'>
         <Heading value='Sustainable. Beautiful. Ethical.' />
         <br />
         <Button value='Shop Now' />
@@ -13,4 +13,4 @@ const Sectionintro = () => {
   )
 }
 
-export default Sectionintro
+export default SectionIntro

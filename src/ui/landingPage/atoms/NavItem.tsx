@@ -1,4 +1,4 @@
-const Navitem = ({ value }: { value: string }) => {
+const NavItem = ({ value }: { value: string }) => {
   return (
     <>
       <li className='px-3 text-custom font-medium py-1 tracking-wider '>
@@ -8,4 +8,4 @@ const Navitem = ({ value }: { value: string }) => {
   )
 }
 
-export default Navitem
+export default NavItem
