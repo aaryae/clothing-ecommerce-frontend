@@ -5,7 +5,7 @@ const SectionAbout = () => {
   return (
     <div className=' relative w-full custom-grid '>
       <div className=' mx-auto w-fit mt-12 custom-grid-1'>
-        <div className='w-[350px]  z-30 custom-glass '>
+        <div className='w-[350px]  z-30  '>
           <ContentCard
             headingValue='
         Ethically Made'

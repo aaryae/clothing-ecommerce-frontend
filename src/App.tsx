@@ -1,7 +1,6 @@
-
 import About from '@ui/landingPage/pages/About'
 import LandingPage from '@ui/landingPage/pages/LandingPage'
-import LandingTemplate from '@ui/landingPage/templates/LandingTemplate'
+import LandingTemplate from '@ui/landingPage/templates/Landing.template'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {

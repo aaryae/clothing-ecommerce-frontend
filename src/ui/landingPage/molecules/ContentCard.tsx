@@ -1,5 +1,5 @@
 import Button from '../atoms/Button'
-import Heading from '../atoms/Heading'
+import HeadingSecondary from '../atoms/HeadingSecondary'
 import Paragraph from '../atoms/Paragraph'
 
 const ContentCard = ({
@@ -12,8 +12,8 @@ const ContentCard = ({
   buttonValue: string
 }) => {
   return (
-    <div className='p-9 m-2 text-center'>
-      <Heading value={headingValue} />
+    <div className='p-9 m-2 text-center custom-glass'>
+      <HeadingSecondary value={headingValue} />
       <br />
       <Paragraph value={paragraphValue} />
       <br />

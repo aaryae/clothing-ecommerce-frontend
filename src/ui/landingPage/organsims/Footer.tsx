@@ -3,7 +3,7 @@ import NavItem from '../atoms/NavItem'
 
 const Footer = () => {
   return (
-    <div className='flex bg-[#fcf6f2] p-4'>
+    <div className='flex bg-[#fcf6f2] p-4 mt-10'>
       <div className='w-1/5 text-center'>
         <HeadingSecondary value='Customer Care' />
         <br />
