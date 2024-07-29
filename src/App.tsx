@@ -1,14 +1,13 @@
 
 import About from '@ui/landingPage/pages/About'
 import LandingPage from '@ui/landingPage/pages/LandingPage'
-import LandingTemplate from '@ui/landingPage/templates/LandingTemplate'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <LandingTemplate />,
+      element: <LandingPage />,
       children: [
         { index: true, element: <LandingPage /> },
         { path: '/about', element: <About /> },
