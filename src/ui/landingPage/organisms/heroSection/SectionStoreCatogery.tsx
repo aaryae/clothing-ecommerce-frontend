@@ -7,7 +7,7 @@ const Sectionstorecategories = () => {
       <div className='flex cursor-pointer '>
         <div className='w-1/2 '>
           <div className=' overflow-hidden '>
-            <img className='hover:scale-105  ' src={image?.frontmen} alt='imagewomen' />
+            <img className='hover:scale-105  ' src={image?.frontmen?? image.fallback} alt='imagewomen' />
           </div>
           <p className='flex justify-center items-center font-bold tracking-widest my-2 py-2 text-xl'>
             Shop Women
@@ -18,7 +18,7 @@ const Sectionstorecategories = () => {
         </div>
         <div className='w-1/2  '>
           <div className='overflow-hidden '>
-            <img className='hover:scale-105  ' src={image?.frontwomen} alt='imagemen' />
+            <img className='hover:scale-105  ' src={image?.frontwomen?? image.fallback} alt='imagemen' />
           </div>
           <p className='flex justify-center items-center font-bold tracking-widest my-2 py-2 text-xl'>
             Shop Men

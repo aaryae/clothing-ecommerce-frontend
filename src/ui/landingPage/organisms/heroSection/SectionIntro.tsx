@@ -1,5 +1,5 @@
-import Button from '../atoms/Button'
-import Heading from '../atoms/Heading'
+import Button from '@ui/landingPage/atoms/Button'
+import Heading from '@ui/landingPage/atoms/Heading'
 
 const SectionIntro = () => {
   return (
