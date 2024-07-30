@@ -7,7 +7,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <LandingPage />,
+      element: <LandingTemplate />,
       children: [
         { index: true, element: <LandingTemplate /> },
         { path: '/about', element: <About /> },
