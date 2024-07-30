@@ -16,8 +16,8 @@ const SectionAbout = () => {
           <Button value='Learn More' />
         </div>
       </div>
-      <img className='hidden md:block z-20 custom-grid-2 ' src={image.flower} alt='flower' />
-      <img className='hidden md:block z-10 custom-grid-3' src={image.herowhite} alt='white' />
+      <img className='hidden md:block z-20 custom-grid-2 ' src={image.flower ?? image.fallback} alt='flower' />
+      <img className='hidden md:block z-10 custom-grid-3' src={image.herowhite ?? image.fallback} alt='white' />
     </div>
   )
 }

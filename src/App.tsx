@@ -1,5 +1,6 @@
 import About from '@ui/landingPage/pages/About'
 import LandingPage from '@ui/landingPage/pages/LandingPage'
+import WomenProduct from '@ui/landingPage/pages/WomenProduct'
 import LandingTemplate from '@ui/landingPage/templates/Landing.template'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ function App() {
       children: [
         { index: true, element: <LandingPage /> },
         { path: '/about', element: <About /> },
+        { path: '/womenproducts', element: <WomenProduct /> },
       ],
     },
   ])

@@ -1,5 +1,11 @@
+import AboutSection from '../organisms/AboutSection'
+
 const About = () => {
-  return <div>About</div>
+  return (
+    <>
+      <AboutSection />
+    </>
+  )
 }
 
 export default About
