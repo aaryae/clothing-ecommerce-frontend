@@ -12,7 +12,7 @@ function App() {
       path: '/',
       element: <LandingTemplate />,
       children: [
-        { index: true, element: <LandingTemplate /> },
+        { index: true, element: <LandingPage /> },
         { path: '/about', element: <About /> },
         { path: '/womenproducts', element: <WomenProduct /> },
         { path: '/menproducts', element: <MenProduct /> },
