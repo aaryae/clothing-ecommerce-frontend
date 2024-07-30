@@ -8,7 +8,7 @@ const SectionBenefit = () => {
     <div
       className='relative bg-cover bg-center mt-24'
       style={{
-        backgroundImage: `url(${image.sectionplate??image.fallback} )`,
+        backgroundImage: `url(${image.sectionplate ?? image.fallback} )`,
       }}
     >
       <div className='md:w-[500px] mx-2 md:mx-auto p-7 my-28 text-center bg-white/20 shadow-lg backdrop-blur-lg border border-white/30 flex justify-center items-center gap-10 flex-col '>

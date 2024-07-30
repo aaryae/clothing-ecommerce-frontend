@@ -1,10 +1,12 @@
-const NavItem = ({ value }: { value: string }) => {
+import { NavLink } from 'react-router-dom'
+
+const NavItem = ({ value, route }: { value: string; route: string }) => {
   return (
-    <>
-      <li className='px-3 text-custom font-medium py-1 tracking-wider '>
-        <a href='#'>{value}</a>
-      </li>
-    </>
+    <li className='px-3 text-custom font-medium py-1 tracking-wider'>
+      <NavLink to={route} className={({ isActive }) => (isActive ? 'text-[#dd9074] font-bold' : '')}>
+        {value}
+      </NavLink>
+    </li>
   )
 }
 

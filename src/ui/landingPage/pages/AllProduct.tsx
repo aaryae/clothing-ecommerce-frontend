@@ -1,13 +1,13 @@
 import Heading from '../atoms/Heading'
-import WomenProductList from '../organisms/WomenProductList'
+import AllProductList from '../organisms/AllProductList'
 
-const WomenProduct = () => {
+const AllProduct = () => {
   return (
     <div className='mt-24 px-5'>
       <Heading value="Women's Collection" />
-      <WomenProductList />
+      <AllProductList />
     </div>
   )
 }
 
-export default WomenProduct
+export default AllProduct
