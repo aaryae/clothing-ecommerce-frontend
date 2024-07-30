@@ -6,7 +6,7 @@ import ParagraphSecondary from '../atoms/ParagraphSecondary'
 
 const AboutSection = () => {
   return (
-    <div className='mt-20 flex flex-col items-center  max-w-5xl mx-auto p-6 ' >
+    <div className='mt-20 flex flex-col items-center  max-w-5xl mx-auto p-6 '>
       <Heading value='Our Story' />
       <br />
       <br />
