@@ -1,13 +1,11 @@
-// src/components/Carousel.js
-
 import { reviews } from '@data/review/review.data'
 import { MoveLeft, MoveRight } from 'lucide-react'
 import { useState } from 'react'
+import ParagraphSecondary from '../atoms/ParagraphSecondary'
 
 const SectionCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  
   const handlePrev = () => {
     const isFirstSlide = currentIndex === 0
     const newIndex = isFirstSlide ? reviews.length - 1 : currentIndex - 1
@@ -21,7 +19,7 @@ const SectionCarousel = () => {
   }
 
   return (
-    <div className='relative w-full max-w-xl mx-auto'>
+    <div className='relative w-full my-24'>
       <div className='overflow-hidden'>
         <div
           className='flex transition-transform duration-500'
@@ -29,17 +27,25 @@ const SectionCarousel = () => {
         >
           {reviews.map((review, index) => (
             <div key={index} className='min-w-full p-8 text-center'>
-              <p className='text-lg '>{review}</p>
-              <p className='mt-4 text-gray-500'>Line/Magazine</p>
+              <img src={review.image} alt={`Review ${index + 1}`} className='mx-auto mb-4' />
+              <div className='md:w-[600px] mx-auto'>
+                <ParagraphSecondary value={review.text} />
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <button onClick={handlePrev} className='absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-white '>
-        <MoveRight />
-      </button>
-      <button onClick={handleNext} className='absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-white'>
+      <button
+        onClick={handlePrev}
+        className='absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-transparent'
+      >
         <MoveLeft />
+      </button>
+      <button
+        onClick={handleNext}
+        className='absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-transparent'
+      >
+        <MoveRight />
       </button>
       <div className='flex justify-center mt-4 space-x-2'>
         {reviews.map((_, index) => (
