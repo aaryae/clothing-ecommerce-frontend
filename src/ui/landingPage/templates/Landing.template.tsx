@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Banner from '../organsims/Banner'
-import Navbar from '../organsims/Navbar'
+import Banner from '../organisms/Banner'
+import Footer from '../organisms/Footer'
+import Navbar from '../organisms/Navbar'
 
 const LandingTemplate = () => {
   return (
@@ -10,7 +11,7 @@ const LandingTemplate = () => {
         <Navbar />
       </div>
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

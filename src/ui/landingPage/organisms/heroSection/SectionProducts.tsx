@@ -1,6 +1,6 @@
 import { image } from '@config/constant/image'
 import Heading from '../atoms/Heading'
-import HeadingSecondary from '../atoms/HeadingSecondary'
+import ParagraphSecondary from '../atoms/ParagraphSecondary'
 
 const SectionProducts = () => {
   return (
@@ -14,7 +14,7 @@ const SectionProducts = () => {
               Quick View
             </p>
           </div>
-          <HeadingSecondary value='Organic Linen Maxi Dress' />
+          <ParagraphSecondary value='Organic Linen Maxi Dress' />
         </div>
         <div className='relative group cursor-pointer p-1'>
           <div className='relative'>
@@ -23,7 +23,7 @@ const SectionProducts = () => {
               Quick View
             </p>
           </div>
-          <HeadingSecondary value='Essential Cotton Blazzer' />
+          <ParagraphSecondary value='Essential Cotton Blazzer' />
         </div>
         <div className='relative group cursor-pointer p-1'>
           {' '}
@@ -33,7 +33,7 @@ const SectionProducts = () => {
               Quick View
             </p>
           </div>
-          <HeadingSecondary value='Cotton Squareneck Cami' />
+          <ParagraphSecondary value='Cotton Squareneck Cami' />
         </div>
       </div>
     </>
