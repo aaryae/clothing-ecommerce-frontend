@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Banner from '../organsims/Banner'
-import Navbar from '../organsims/Navbar'
-import Footer from '../organsims/Footer'
+import Banner from '../organisms/Banner'
+import Footer from '../organisms/Footer'
+import Navbar from '../organisms/Navbar'
 
 const LandingTemplate = () => {
   return (

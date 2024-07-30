@@ -1,9 +1,10 @@
-import SectionAbout from '../organsims/SectionAbout'
-import SectionBenefit from '../organsims/SectionBenefit'
-import SectionCarousel from '../organsims/SectionCarousel'
-import SectionIntro from '../organsims/SectionIntro'
-import SectionProducts from '../organsims/SectionProducts'
-import Sectionstorecategories from '../organsims/SectionStoreCatogery'
+import SectionAbout from '../organisms/heroSection/SectionAbout'
+import SectionBenefit from '../organisms/heroSection/SectionBenefit'
+import SectionCarousel from '../organisms/heroSection/SectionCarousel'
+import SectionIntro from '../organisms/heroSection/SectionIntro'
+import SectionProducts from '../organisms/heroSection/SectionProducts'
+
+import Sectionstorecategories from '../organisms/heroSection/SectionStoreCatogery'
 
 const LandingPage = () => {
   return (

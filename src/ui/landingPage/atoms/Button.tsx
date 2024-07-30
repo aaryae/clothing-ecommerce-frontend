@@ -7,4 +7,3 @@ const Button = ({ value }: { value: string }) => {
 }
 
 export default Button
-
