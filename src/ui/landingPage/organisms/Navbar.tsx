@@ -37,11 +37,11 @@ const Navbar = () => {
           <X color='#870003' strokeWidth={0.5} />
         </div>
         <ul className='text-sm flex flex-col justify-center text-center m-auto h-screen gap-5'>
-        <NavItem value='Home' route='/' />
-        <NavItem value='Women' route='womenproducts' />
-        <NavItem value='Men' route='menproducts' />
-        <NavItem value='Shop All' route='allproducts' />
-        <NavItem value='About' route='about' />
+          <NavItem value='Home' route='/' />
+          <NavItem value='Women' route='womenproducts' />
+          <NavItem value='Men' route='menproducts' />
+          <NavItem value='Shop All' route='allproducts' />
+          <NavItem value='About' route='about' />
         </ul>
       </div>
     </>

@@ -12,6 +12,9 @@ export default {
       fontSize: {
         custom: '0.775rem',
       },
+      borderWidth: {
+        custom: '1px',
+      },
     },
   },
   plugins: [],

@@ -1,31 +1,27 @@
-const ProductCard = ({
-  image,
-  productHeading,
-  price,
-  discount = false,
-  originalPrice,
-  discountPrice,
-  productState = false,
-  productValue,
-}: {
-  image: string
-  productHeading: string
-  price: number
-  discount?: boolean
-  originalPrice?: number
-  discountPrice?: number
-  productState?: boolean
-  productValue?: string
-}) => {
+import { ProductCardInterface } from '@interface/product.interface'
+
+const ProductCard = (props: ProductCardInterface & { onClick?: () => void }) => {
+  const {
+    image,
+    productHeading,
+    price,
+    discount = false,
+    originalPrice,
+    discountPrice,
+    productState = false,
+    productValue,
+    onClick,
+  } = props
+
   return (
-    <div className='group relative w-fit cursor-pointer'>
+    <div className='group relative w-fit cursor-pointer ' onClick={onClick}>
       <div className='relative'>
         <img className='relative' src={image} alt='productimg' />
-        <span className='absolute bottom-0 left-0 right-0 bg-[#ad6343]  text-white opacity-0 group-hover:opacity-100 transition-opacity p-2 text-center'>
+        <span className='absolute bottom-0 left-0 right-0 bg-[#ad6343] text-white opacity-0 group-hover:opacity-100 transition-opacity p-2 text-center'>
           Quick View
         </span>
         {productState && (
-          <span className='absolute top-0 bg-[#ad6343]  text-white font-medium px-3 text-sm'>{productValue}</span>
+          <span className='absolute top-0 bg-[#ad6343] text-white font-medium px-3 text-sm'>{productValue}</span>
         )}
       </div>
       <p className='font-semibold tracking-widest'>{productHeading}</p>
