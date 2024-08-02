@@ -1,5 +1,5 @@
 import Heading from '../atoms/Heading'
-import WomenProductList from '../organisms/WomenProductList'
+import WomenProductList from '../organisms/products/WomenProductList'
 
 const WomenProduct = () => {
   return (
