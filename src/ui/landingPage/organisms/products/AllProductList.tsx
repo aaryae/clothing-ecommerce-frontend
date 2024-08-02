@@ -1,19 +1,22 @@
 import { MenProductData, womenProductData } from '@data/productData/product.data'
 import useProductModal from '@hooks/useProductModel'
+import useScreenSize from '@hooks/useScreenSize'
 import ProductCard from '@ui/landingPage/molecules/ProductCard'
-import ProductModal from '../modal/ProductModal'
+import Loading from 'Loading'
+import { lazy, Suspense } from 'react'
+
+const ProductModal = lazy(() => import('@ui/landingPage/organisms/modal/ProductModal'))
 
 const AllProductList = () => {
   const { isModalOpen, selectedProduct, openModal, closeModal } = useProductModal()
+  const isMdOrLarger = useScreenSize()
 
   return (
-    <div className='flex flex-wrap mt-11 '>
-      {isModalOpen && selectedProduct && (
-        <ProductModal
-          productName={selectedProduct.productHeading}
-          productImage={selectedProduct.image}
-          onClose={closeModal}
-        />
+    <div className='flex flex-wrap mt-11'>
+      {isModalOpen && selectedProduct && isMdOrLarger && (
+        <Suspense fallback={<Loading />}>
+          <ProductModal {...selectedProduct} onClose={closeModal} />
+        </Suspense>
       )}
 
       {MenProductData.concat(womenProductData).map((product, index) => (

@@ -7,25 +7,25 @@ const Footer = () => {
       <div className='w-1/5 text-center'>
         <HeadingSecondary value='Customer Care' />
         <br />
-        <NavItem value='FAQ' />
-        <NavItem value='Shipping & Returns' />
-        <NavItem value='Store Policy' />
+        <NavItem value='FAQ' route={''} />
+        <NavItem value='Shipping & Returns' route={''} />
+        <NavItem value='Store Policy' route={''} />
       </div>
       <div className='w-1/5 text-center'>
         <HeadingSecondary value='Follow Us' />
         <br />
-        <NavItem value='Instagram' />
-        <NavItem value='Twitter' />
-        <NavItem value='Facebook' />
-        <NavItem value='Contact' />
+        <NavItem value='Instagram' route={''} />
+        <NavItem value='Twitter' route={''} />
+        <NavItem value='Facebook' route={''} />
+        <NavItem value='Contact' route={''} />
       </div>
       <div className='w-1/5 text-center'>
         <HeadingSecondary value='The Company' />
         <br />
-        <NavItem value='About' />
-        <NavItem value='Sustainability' />
-        <NavItem value='Accessibility' />
-        <NavItem value='Store Locator' />
+        <NavItem value='About' route={''} />
+        <NavItem value='Sustainability' route={''} />
+        <NavItem value='Accessibility' route={''} />
+        <NavItem value='Store Locator' route={''} />
       </div>
       <div className='w-2/5 text-center'>
         <br />

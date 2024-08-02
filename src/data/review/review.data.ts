@@ -1,4 +1,3 @@
-// src/data/review/review.data.js
 
 import reviewimage1 from '@assets/images/reviewImages/reviewimage1.webp'
 import reviewimage2 from '@assets/images/reviewImages/reviewimage2.webp'

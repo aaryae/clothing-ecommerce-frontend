@@ -79,4 +79,3 @@ export const womenProductData = [
     image: image.womenproduct6 ?? image.fallback,
   },
 ]
-

@@ -1,4 +1,4 @@
-export interface ProductCardInterface {
+export interface productCardInterface {
   image: string
   productHeading: string
   price: number
@@ -7,4 +7,5 @@ export interface ProductCardInterface {
   discountPrice?: number
   productState?: boolean
   productValue?: string
+  onClick?: () => void
 }
