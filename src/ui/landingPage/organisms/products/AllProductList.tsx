@@ -28,4 +28,4 @@ const AllProductList = () => {
   )
 }
 
-export default AllProductList
+export default AllProductList;

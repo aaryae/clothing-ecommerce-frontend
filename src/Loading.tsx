@@ -1,7 +1,7 @@
 const Loading = () => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
-      <circle fill='#A7A19D' stroke='#A7A19D' stroke-width='15' r='15' cx='40' cy='65'>
+      <circle fill='#A7A19D' stroke='#A7A19D' strokeWidth='15' r='15' cx='40' cy='65'>
         <animate
           attributeName='cy'
           calcMode='spline'
@@ -12,7 +12,7 @@ const Loading = () => {
           begin='-.4'
         ></animate>
       </circle>
-      <circle fill='#A7A19D' stroke='#A7A19D' stroke-width='15' r='15' cx='100' cy='65'>
+      <circle fill='#A7A19D' stroke='#A7A19D' strokeWidth='15' r='15' cx='100' cy='65'>
         <animate
           attributeName='cy'
           calcMode='spline'
@@ -23,7 +23,7 @@ const Loading = () => {
           begin='-.2'
         ></animate>
       </circle>
-      <circle fill='#A7A19D' stroke='#A7A19D' stroke-width='15' r='15' cx='160' cy='65'>
+      <circle fill='#A7A19D' stroke='#A7A19D' strokeWidth='15' r='15' cx='160' cy='65'>
         <animate
           attributeName='cy'
           calcMode='spline'

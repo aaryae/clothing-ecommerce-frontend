@@ -1,11 +1,13 @@
 import useToggle from '@hooks/useToggle'
+import NavItem from '@ui/landingPage/atoms/NavItem'
+import Logo from '@ui/landingPage/molecules/Logo'
+import NavList from '@ui/landingPage/molecules/NavList'
 import { AlignLeft, ShoppingBag, X } from 'lucide-react'
-import NavItem from '../atoms/NavItem'
-import Logo from '../molecules/Logo'
-import NavList from '../molecules/NavList'
+import Cart from './Cart'
 
 const Navbar = () => {
   const [menuOpen, toggleMenuOpen] = useToggle(false)
+  const [cartOpen, toggleCartOpen] = useToggle(false)
 
   return (
     <>
@@ -15,8 +17,15 @@ const Navbar = () => {
         <div className='flex gap-20 justify-between'>
           <NavList />
           <div className='hidden md:flex gap-4 m-auto'>
-            <p className='m-auto'>Log In</p>
-            <ShoppingBag strokeWidth={0.5} />
+            <p className='m-auto text-sm cursor-pointer'>Log In</p>
+            <div
+              className='cursor-pointer'
+              onClick={() => {
+                toggleCartOpen()
+              }}
+            >
+              <ShoppingBag strokeWidth={0.5} size={16} />
+            </div>
           </div>
           <div onClick={() => toggleMenuOpen()} className='flex md:hidden cursor-pointer'>
             <AlignLeft strokeWidth={0.5} />
@@ -25,7 +34,7 @@ const Navbar = () => {
       </nav>
       {/* Overlay : background blur when sidebar is open  */}
       <div
-        className={`md:hidden  block fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`md:hidden block fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => toggleMenuOpen()}
       ></div>
 
@@ -44,6 +53,9 @@ const Navbar = () => {
           <NavItem value='About' route='about' />
         </ul>
       </div>
+
+      {/* Cart Component */}
+      <Cart cartOpen={cartOpen} toggleCartOpen={toggleCartOpen} />
     </>
   )
 }

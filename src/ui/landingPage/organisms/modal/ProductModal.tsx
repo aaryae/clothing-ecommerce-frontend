@@ -1,8 +1,6 @@
 import { productCardInterface } from '@interface/product.interface'
-import Button from '@ui/landingPage/atoms/Button'
 import HeadingSecondary from '@ui/landingPage/atoms/HeadingSecondary'
 import { X } from 'lucide-react'
-import { Link } from 'react-router-dom'
 
 interface productModalProps extends productCardInterface {
   onClose: () => void
@@ -10,13 +8,13 @@ interface productModalProps extends productCardInterface {
 
 const ProductModal = ({ image, productHeading, onClose }: productModalProps) => {
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50'>
+    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 '>
       <div className='flex bg-white p-4 rounded'>
         <div className='w-[300px]'>
           <img src={image} alt='productImg' />
         </div>
 
-        <div className='p-4 flex flex-col'>
+        <div className='p-4 flex flex-col '>
           <div className='w-full'>
             <div className='float-right cursor-pointer' onClick={onClose}>
               <X />
@@ -51,11 +49,18 @@ const ProductModal = ({ image, productHeading, onClose }: productModalProps) => 
               defaultValue='1'
             />
           </div>
-          <Button value='Add to Cart' />
-
-          <Link className='py-5 text-sm underline' to='/productdetails'>
-            View More Details
-          </Link>
+          <button
+            className='border-custom p-1 my-1 border-[#ad6343] text-[#ad6343]  tracking-wide text-sm font-extrabold'
+            type='submit'
+          >
+            Add to Cart
+          </button>
+          <button
+            className='border-custom p-1 my-1 border-[#5d6956] bg-[#5d6956] text-white hover:bg-[#505f47] tracking-wide text-sm font-bold'
+            type='submit'
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>
