@@ -1,7 +1,8 @@
 import { image } from '@config/constant/image'
-import Button from '../../atoms/Button'
-import HeadingSecondary from '../../atoms/HeadingSecondary'
-import Paragraph from '../../atoms/Paragraph'
+import Button from  '@ui/landingPage/atoms/Button'
+import HeadingSecondary from '@ui/landingPage/atoms/HeadingSecondary'
+import Paragraph from '@ui/landingPage/atoms/Paragraph'
+
 
 const SectionAbout = () => {
   return (

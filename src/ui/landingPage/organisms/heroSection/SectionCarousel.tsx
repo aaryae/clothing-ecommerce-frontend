@@ -1,7 +1,8 @@
 import { reviews } from '@data/review/review.data'
+import ParagraphSecondary from '@ui/landingPage/atoms/ParagraphSecondary'
 import { MoveLeft, MoveRight } from 'lucide-react'
 import { useState } from 'react'
-import ParagraphSecondary from '../../atoms/ParagraphSecondary'
+
 
 const SectionCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

@@ -1,5 +1,5 @@
-import Heading from '../atoms/Heading'
-import AllProductList from '../organisms/products/AllProductList'
+import Heading from '@ui/landingPage/atoms/Heading'
+import AllProductList from '@ui/landingPage/organisms/products/AllProductList'
 
 const AllProduct = () => {
   return (

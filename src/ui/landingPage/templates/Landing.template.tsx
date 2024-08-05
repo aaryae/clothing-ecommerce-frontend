@@ -1,11 +1,11 @@
+import Banner from '@ui/landingPage/organisms/Banner'
+import Footer from '@ui/landingPage/organisms/Footer'
+import Navbar from '@ui/landingPage/organisms/Navbar'
 import { Outlet } from 'react-router-dom'
-import Banner from '../organisms/Banner'
-import Footer from '../organisms/Footer'
-import Navbar from '../organisms/Navbar'
 
 const LandingTemplate = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col justify-between h-screen '>
       <div className='z-50'>
         <Banner />
         <Navbar />

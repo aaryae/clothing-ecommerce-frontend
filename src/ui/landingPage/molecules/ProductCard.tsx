@@ -1,6 +1,6 @@
-import { ProductCardInterface } from '@interface/product.interface'
+import { productCardInterface } from '@interface/product.interface'
 
-const ProductCard = (props: ProductCardInterface & { onClick?: () => void }) => {
+const ProductCard = (props: productCardInterface) => {
   const {
     image,
     productHeading,
