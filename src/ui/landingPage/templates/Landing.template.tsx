@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 const LandingTemplate = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col justify-between h-screen '>
       <div className='z-50'>
         <Banner />
         <Navbar />

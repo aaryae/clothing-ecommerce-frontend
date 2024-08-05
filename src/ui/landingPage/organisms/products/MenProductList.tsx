@@ -1,14 +1,24 @@
 import { MenProductData } from '@data/productData/product.data'
 import useProductModal from '@hooks/useProductModel'
 import useScreenSize from '@hooks/useScreenSize'
+import { productCardInterface } from '@interface/product.interface'
 import ProductCard from '@ui/landingPage/molecules/ProductCard'
 import Loading from 'Loading'
 import { lazy, Suspense } from 'react'
 
 const ProductModal = lazy(() => import('@ui/landingPage/organisms/modal/ProductModal'))
+
 const MenProductList = () => {
   const { isModalOpen, selectedProduct, openModal, closeModal } = useProductModal()
   const isMdOrLarger = useScreenSize()
+
+  const handleProductClick = (product: productCardInterface) => {
+    if (isMdOrLarger) {
+      openModal(product)
+    } else {
+      window.location.href = `/products/${product.id}`
+    }
+  }
 
   return (
     <div className='flex flex-wrap mt-11'>
@@ -20,7 +30,7 @@ const MenProductList = () => {
 
       {MenProductData.map((product, index) => (
         <div key={index} className='w-full sm:w-1/2 lg:w-1/3 p-2'>
-          <ProductCard {...product} onClick={() => openModal(product)} />
+          <ProductCard {...product} onClick={() => handleProductClick(product)} />
         </div>
       ))}
     </div>

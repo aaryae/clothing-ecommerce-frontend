@@ -1,7 +1,7 @@
 import Button from '@ui/landingPage/atoms/Button'
+import Paragraph from '@ui/landingPage/atoms/Paragraph'
+import CartContent from '@ui/landingPage/molecules/CartContent'
 import { ChevronLeft } from 'lucide-react'
-import Paragraph from '../atoms/Paragraph'
-import CartContent from '../molecules/CartContent'
 
 const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen: () => void }) => {
   return (

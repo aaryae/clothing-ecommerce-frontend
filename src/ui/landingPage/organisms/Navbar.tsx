@@ -2,22 +2,46 @@ import useToggle from '@hooks/useToggle'
 import NavItem from '@ui/landingPage/atoms/NavItem'
 import Logo from '@ui/landingPage/molecules/Logo'
 import NavList from '@ui/landingPage/molecules/NavList'
+import Cart from '@ui/landingPage/organisms/Cart'
 import { AlignLeft, ShoppingBag, X } from 'lucide-react'
-import Cart from './Cart'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [menuOpen, toggleMenuOpen] = useToggle(false)
   const [cartOpen, toggleCartOpen] = useToggle(false)
 
+  // add box shadow when scroll-Y
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.getElementById('navbar')
+      if (window.scrollY > 0) {
+        navbar?.classList.add('shadow-md')
+      } else {
+        navbar?.classList.remove('shadow-md')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
       {/* navmenu */}
-      <nav className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[26px]'>
+      <nav
+        id='navbar'
+        className='flex justify-between py-2 px-7 w-full fixed bg-white mt-[26px] transition-shadow duration-300'
+      >
         <Logo />
         <div className='flex gap-20 justify-between'>
           <NavList />
           <div className='hidden md:flex gap-4 m-auto'>
-            <p className='m-auto text-sm cursor-pointer'>Log In</p>
+            <Link className='m-auto text-sm cursor-pointer' to='/login'>
+              LogIn
+            </Link>
             <div
               className='cursor-pointer'
               onClick={() => {
@@ -32,6 +56,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
       {/* Overlay : background blur when sidebar is open  */}
       <div
         className={`md:hidden block fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
