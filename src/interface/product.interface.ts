@@ -8,5 +8,6 @@ export interface productCardInterface {
   discountPrice?: number
   productState?: boolean
   productValue?: string
-  onClick?: () => void
+  productModal?: () => void
+  productDetail?: () => void
 }

@@ -16,8 +16,12 @@ const MenProductList = () => {
     if (isMdOrLarger) {
       openModal(product)
     } else {
-      window.location.href = `/products/${product.id}`
+      handleProductDetail(product)
     }
+  }
+
+  const handleProductDetail = (product: productCardInterface) => {
+    window.location.href = `/products/${product.id}`
   }
 
   return (
@@ -30,7 +34,15 @@ const MenProductList = () => {
 
       {MenProductData.map((product, index) => (
         <div key={index} className='w-full sm:w-1/2 lg:w-1/3 p-2'>
-          <ProductCard {...product} onClick={() => handleProductClick(product)} />
+          <ProductCard
+            {...product}
+            productModal={() => {
+              handleProductClick(product)
+            }}
+            productDetail={() => {
+              handleProductDetail(product)
+            }}
+          />
         </div>
       ))}
     </div>

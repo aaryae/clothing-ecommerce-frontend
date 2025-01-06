@@ -10,16 +10,20 @@ const ProductCard = (props: productCardInterface) => {
     discountPrice,
     productState = false,
     productValue,
-    onClick,
+    productModal,
+    productDetail,
   } = props
 
   return (
-    <div className='group relative w-fit cursor-pointer ' onClick={onClick}>
+    <div className='group relative w-fit cursor-pointer'>
       <div className='relative'>
-        <img className='relative' src={image} alt='productimg' />
-        <span className='absolute bottom-0 left-0 right-0 bg-[#ad6343] text-white opacity-0 group-hover:opacity-100 transition-opacity p-2 text-center'>
+        <img onClick={productDetail} className='relative' src={image} alt='productimg' />
+        <div
+          onClick={productModal}
+          className='absolute bottom-0 left-0 right-0 bg-[#ad6343] text-white opacity-0 group-hover:opacity-100 transition-opacity p-2 text-center'
+        >
           Quick View
-        </span>
+        </div>
         {productState && (
           <span className='absolute top-0 bg-[#ad6343] text-white font-medium px-3 text-sm'>{productValue}</span>
         )}

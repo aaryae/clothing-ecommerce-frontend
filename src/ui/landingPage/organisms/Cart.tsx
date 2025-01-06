@@ -31,9 +31,6 @@ const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen:
         </p>
         <div className='h-[50%] overflow-y-scroll'>
           <CartContent />
-          <CartContent />
-          <CartContent />
-          <CartContent />
         </div>
 
         {/* checkout */}

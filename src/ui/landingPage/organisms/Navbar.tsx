@@ -80,7 +80,7 @@ const Navbar = () => {
       </div>
 
       {/* Cart Component */}
-      <Cart cartOpen={cartOpen} toggleCartOpen={toggleCartOpen} />
+      <Cart cartOpen={cartOpen} toggleCartOpen={toggleCartOpen}/>
     </>
   )
 }
