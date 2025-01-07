@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Sectionstorecategories = () => {
   return (
     <>
-      <div className='flex cursor-pointer '>
+      <div className='flex cursor-pointer mx-auto'>
         <div className='w-1/2 '>
           <div className=' overflow-hidden '>
             <img className='hover:scale-105  ' src={image?.frontmen ?? image.fallback} alt='imagewomen' />

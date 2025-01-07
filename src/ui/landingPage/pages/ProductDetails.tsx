@@ -14,13 +14,13 @@ const ProductDetails = () => {
       <div className='px-4 flex flex-col '>
         <HeadingSecondary value={product?.productHeading} />
         <div>
-          <p className='text-sm py-3 tracking-wide text-[#ad6343] font-bold'>$20.00</p>
-          <label htmlFor='size'>Size</label>
-          <br />
-          <select name='size' id='size' className='w-[300px] p-2 bg-white border-custom tracking-wide outline-none'>
-            <option className='p-2 text-custom' value='' hidden>
-              Select Size
-            </option>
+          <p className='text-sm py-3 tracking-wider text-[#ad6343] font-bold'>- ${product?.price}</p>
+
+          <label htmlFor='size' className='pr-3 tracking-wider'>
+            Size
+          </label>
+
+          <select name='size' id='size' className=' p-2 bg-white border-custom tracking-wide outline-none'>
             <option className='p-2' value='small'>
               Small
             </option>
@@ -33,8 +33,10 @@ const ProductDetails = () => {
           </select>
         </div>
         <div className='py-2'>
-          <label htmlFor='quantity'>Quantity</label>
-          <br />
+          <label htmlFor='quantity' className='tracking-wider'>
+            Quantity
+          </label>
+
           <input
             className='border-custom outline-none m-1 w-[50px] text-center'
             type='number'

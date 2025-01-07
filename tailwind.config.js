@@ -10,7 +10,7 @@ export default {
         poppins: 'Poppins, sans-serif',
       },
       fontSize: {
-        custom: '0.775rem',
+        custom: '1rem',
       },
       borderWidth: {
         custom: '1px',
