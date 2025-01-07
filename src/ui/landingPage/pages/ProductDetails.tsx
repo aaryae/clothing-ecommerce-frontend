@@ -1,14 +1,14 @@
-import { MenProductData } from '@data/productData/product.data'
+import { MenProductData, womenProductData } from '@data/productData/product.data'
 import { useParams } from 'react-router-dom'
 import HeadingSecondary from '../atoms/HeadingSecondary'
 import ProductInfo from '../molecules/ProductInfo'
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const product = MenProductData.find((product) => product.id.toString() === productId)
+  const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
 
   return (
-    <div className='my-32 max-w-3xl mx-auto flex  gap-8 flex-wrap justify-center md:justify-start'>
+    <div className='my-32 max-w-3xl mx-auto flex  gap-8 flex-wrap md:flex-nowrap lg:flex-nowrap justify-center '>
       <img src={product?.image} alt='productimg' width={400} />
 
       <div className='px-4 flex flex-col '>
