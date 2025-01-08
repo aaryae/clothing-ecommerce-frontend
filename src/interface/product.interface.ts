@@ -1,5 +1,5 @@
 export interface productCardInterface {
-  id: string,
+  id: string
   image: string
   productHeading: string
   price: number

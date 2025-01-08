@@ -16,7 +16,7 @@ const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen:
 
       {/* Cart */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[300px] bg-white transition-transform duration-300 ease-in-out transform ${
+        className={`fixed top-0 right-0 h-screen w-[400px] bg-white transition-transform duration-300 ease-in-out transform ${
           cartOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -26,7 +26,7 @@ const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen:
           </button>
           <h1 className='text-2xl font-extrabold tracking-widest'>Cart</h1>
         </div>
-        <p className='text-xl text-center pt-8 pb-5 font-extrabold border-custom border-r-0 border-b-[#ad6343] border-l-0 '>
+        <p className='text-xl text-center mx-5 pt-8 pb-5 font-extrabold border-custom border-r-0 border-b-[#ad6343] border-l-0 '>
           Your products
         </p>
         <div className='h-[50%] overflow-y-scroll'>
