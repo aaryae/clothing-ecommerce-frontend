@@ -8,13 +8,15 @@ import ProductInfo from '../molecules/ProductInfo'
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const { addToCart, selectedProduct, setSelectedProduct } = useContext(CartContext) || {}
+  const { addToCart, selectedProduct, setSelectedProduct, setQuantity } = useContext(CartContext) || {}
   const navigate = useNavigate()
 
   const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
 
   const handleproductcart = () => {
-    if (product && addToCart && setSelectedProduct) {
+    if (product && addToCart && setSelectedProduct && setQuantity) {
+      setQuantity((prevQuantity) => prevQuantity + 1)
+
       addToCart(product)
       setSelectedProduct(product)
     }
@@ -36,16 +38,16 @@ const ProductDetails = () => {
           <img src={displayProduct.image} alt='productimg' width={400} />
 
           <div className='px-4 flex flex-col'>
-            <HeadingSecondary value={displayProduct.productHeading} />
-            <div>
-              <p className='text-sm py-3 tracking-wider text-[#ad6343] font-bold'>
+            <div className='flex gap-3 flex-wrap'>
+              <HeadingSecondary value={displayProduct.productHeading} />
+              <p className='text-sm py-3 my-auto h-full tracking-wider text-[#ad6343] font-bold'>
                 - ${displayProduct.price.toFixed(2)}
               </p>
-
+            </div>
+            <div>
               <label htmlFor='size' className='pr-3 tracking-wider'>
                 Size
               </label>
-
               <select name='size' id='size' className='p-2 bg-white border-custom tracking-wide outline-none'>
                 <option className='p-2' value='small'>
                   Small

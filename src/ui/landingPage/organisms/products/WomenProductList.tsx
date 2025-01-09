@@ -23,7 +23,7 @@ const WomenProductList = () => {
   }
 
   const handleProductDetail = (product: productCardInterface) => {
-    navigate(`/products/${product.id}`) // Navigate without refreshing
+    navigate(`/products/${product.id}`)
   }
   return (
     <div className='flex flex-wrap mt-11'>

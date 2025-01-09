@@ -5,10 +5,12 @@ import { productCardInterface } from '@interface/product.interface'
 import ProductCard from '@ui/landingPage/molecules/ProductCard'
 import Loading from 'Loading'
 import { lazy, Suspense } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductModal = lazy(() => import('@ui/landingPage/organisms/modal/ProductModal'))
 
 const AllProductList = () => {
+  const navigate = useNavigate()
   const { isModalOpen, selectedProduct, openModal, closeModal } = useProductModal()
   const isMdOrLarger = useScreenSize()
 
@@ -21,7 +23,7 @@ const AllProductList = () => {
   }
 
   const handleProductDetail = (product: productCardInterface) => {
-    window.location.href = `/products/${product.id}`
+    navigate(`/products/${product.id}`)
   }
 
   return (
