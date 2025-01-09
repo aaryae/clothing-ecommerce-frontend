@@ -50,19 +50,19 @@ export const womenProductData = [
   {
     id: '7',
     productHeading: 'Relaxed Boyfriend Tee',
-    price: 20,
+    price: 220,
     image: image.womenproduct3 ?? image.fallback,
   },
   {
     id: ' 8',
     productHeading: 'Rusar Silk Kami',
-    price: 20,
+    price: 220,
     image: image.womenproduct2 ?? image.fallback,
   },
   {
     id: '9',
     productHeading: 'Classic Cotton Tee',
-    price: 20,
+    price: 230,
     image: image.womenproduct1 ?? image.fallback,
     discount: true,
     originalPrice: 120,
@@ -73,7 +73,7 @@ export const womenProductData = [
   {
     id: '10',
     productHeading: 'Linen A-Line Skirt',
-    price: 20,
+    price: 240,
     image: image.womenproduct4 ?? image.fallback,
     productState: true,
     productValue: 'Best Seller',
@@ -81,13 +81,13 @@ export const womenProductData = [
   {
     id: '11',
     productHeading: 'Organic Cotton Belted Jacket',
-    price: 20,
+    price: 260,
     image: image.womenproduct5 ?? image.fallback,
   },
   {
     id: '12',
     productHeading: 'Organic Linen Maxi Dress',
-    price: 20,
+    price: 260,
     image: image.womenproduct6 ?? image.fallback,
   },
 ]

@@ -1,11 +1,11 @@
 import useToggle from '@hooks/useToggle'
 import NavItem from '@ui/landingPage/atoms/NavItem'
-import Logo from '@ui/landingPage/molecules/Logo'
 import NavList from '@ui/landingPage/molecules/NavList'
 import Cart from '@ui/landingPage/organisms/Cart'
 import { AlignLeft, ShoppingBag, X } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Logo from '../molecules/Logo'
 
 const Navbar = () => {
   const [menuOpen, toggleMenuOpen] = useToggle(false)

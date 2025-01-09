@@ -1,5 +1,5 @@
 export interface productCardInterface {
-  id: string,
+  id: string
   image: string
   productHeading: string
   price: number
@@ -8,5 +8,6 @@ export interface productCardInterface {
   discountPrice?: number
   productState?: boolean
   productValue?: string
-  onClick?: () => void
+  productModal?: () => void
+  productDetail?: () => void
 }

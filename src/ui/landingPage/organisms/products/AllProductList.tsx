@@ -1,15 +1,30 @@
 import { MenProductData, womenProductData } from '@data/productData/product.data'
 import useProductModal from '@hooks/useProductModel'
 import useScreenSize from '@hooks/useScreenSize'
+import { productCardInterface } from '@interface/product.interface'
 import ProductCard from '@ui/landingPage/molecules/ProductCard'
 import Loading from 'Loading'
 import { lazy, Suspense } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductModal = lazy(() => import('@ui/landingPage/organisms/modal/ProductModal'))
 
 const AllProductList = () => {
+  const navigate = useNavigate()
   const { isModalOpen, selectedProduct, openModal, closeModal } = useProductModal()
   const isMdOrLarger = useScreenSize()
+
+  const handleProductClick = (product: productCardInterface) => {
+    if (isMdOrLarger) {
+      openModal(product)
+    } else {
+      handleProductDetail(product)
+    }
+  }
+
+  const handleProductDetail = (product: productCardInterface) => {
+    navigate(`/products/${product.id}`)
+  }
 
   return (
     <div className='flex flex-wrap mt-11'>
@@ -21,11 +36,19 @@ const AllProductList = () => {
 
       {MenProductData.concat(womenProductData).map((product, index) => (
         <div key={index} className='w-full sm:w-1/2 lg:w-1/4 p-2'>
-          <ProductCard {...product} onClick={() => openModal(product)} />
+          <ProductCard
+            {...product}
+            productModal={() => {
+              handleProductClick(product)
+            }}
+            productDetail={() => {
+              handleProductDetail(product)
+            }}
+          />{' '}
         </div>
       ))}
     </div>
   )
 }
 
-export default AllProductList;
+export default AllProductList

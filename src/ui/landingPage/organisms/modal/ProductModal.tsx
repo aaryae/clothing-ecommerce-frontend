@@ -8,7 +8,7 @@ interface productModalProps extends productCardInterface {
 
 const ProductModal = ({ image, productHeading, onClose }: productModalProps) => {
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 '>
+    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50  '>
       <div className='flex bg-white p-4 rounded'>
         <div className='w-[300px]'>
           <img src={image} alt='productImg' />
