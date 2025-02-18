@@ -1,12 +1,30 @@
+import { MenProductData, womenProductData } from '@data/productData/product.data'
 import { productCardInterface } from '@interface/product.interface'
 import HeadingSecondary from '@ui/landingPage/atoms/HeadingSecondary'
+import { CartContext } from 'context/cartContext'
 import { X } from 'lucide-react'
+import { useContext } from 'react'
+import { useParams } from 'react-router-dom'
 
 interface productModalProps extends productCardInterface {
   onClose: () => void
 }
 
 const ProductModal = ({ image, productHeading, onClose }: productModalProps) => {
+  const { productId } = useParams()
+  const { addToCart, setSelectedProduct, setQuantity } = useContext(CartContext) || {}
+
+  const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
+
+  const handleproductcart = () => {
+    if (product && addToCart && setSelectedProduct && setQuantity) {
+      setQuantity((prevQuantity) => prevQuantity + 1)
+
+      addToCart(product)
+      setSelectedProduct(product)
+    }
+  }
+
   return (
     <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50  '>
       <div className='flex bg-white p-4 rounded'>
@@ -51,7 +69,7 @@ const ProductModal = ({ image, productHeading, onClose }: productModalProps) => 
           </div>
           <button
             className='border-custom p-1 my-1 border-[#ad6343] text-[#ad6343]  tracking-wide text-sm font-extrabold'
-            type='submit'
+            onClick={handleproductcart}
           >
             Add to Cart
           </button>
