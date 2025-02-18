@@ -3,12 +3,12 @@ import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 're
 
 interface CartContextType {
   quantity: number
-  cartItems: (productCardInterface & { quantity?: number })[] 
+  cartItems: (productCardInterface & { quantity?: number })[]
   selectedProduct: productCardInterface | null
   setQuantity: Dispatch<SetStateAction<number>>
   addToCart: (product: productCardInterface) => void
   setSelectedProduct: (product: productCardInterface | null) => void
-  updateCartQuantity: (productId: string, quantity: number) => void 
+  updateCartQuantity: (productId: string, quantity: number) => void
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined)
