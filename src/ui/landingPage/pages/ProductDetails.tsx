@@ -1,23 +1,22 @@
 import { MenProductData, womenProductData } from '@data/productData/product.data'
 import { CartContext } from 'context/cartContext'
 import { CircleChevronLeft } from 'lucide-react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import HeadingSecondary from '../atoms/HeadingSecondary'
 import ProductInfo from '../molecules/ProductInfo'
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const { addToCart, selectedProduct, setSelectedProduct, setQuantity } = useContext(CartContext) || {}
+  const { addToCart, selectedProduct, setSelectedProduct } = useContext(CartContext) || {}
   const navigate = useNavigate()
+  const [quantityNumber, setQuantityNumber] = useState<number>(1)
 
   const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
 
-  const handleproductcart = () => {
-    if (product && addToCart && setSelectedProduct && setQuantity) {
-      setQuantity((prevQuantity) => prevQuantity + 1)
-
-      addToCart(product)
+  const handleProductCart = () => {
+    if (product && addToCart && setSelectedProduct) {
+      addToCart(product, quantityNumber) // Pass the correct quantity directly
       setSelectedProduct(product)
     }
   }
@@ -71,13 +70,14 @@ const ProductDetails = () => {
                 pattern='[0-9]*'
                 max='99999'
                 min='1'
-                defaultValue='1'
+                value={quantityNumber}
+                onChange={(event) => setQuantityNumber(Number(event.target.value))}
               />
             </div>
             <button
               className='border-custom p-1 py-2 my-1 border-[#ad6343] text-[#ad6343] tracking-wide text-custom font-extrabold'
               type='button'
-              onClick={handleproductcart}
+              onClick={handleProductCart}
             >
               Add to Cart
             </button>
