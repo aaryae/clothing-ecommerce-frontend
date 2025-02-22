@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import Paragraph from '../atoms/Paragraph'
 
 const CartContent = () => {
-  const { cartItems } = useContext(CartContext) || { cartItems: [] }
+  const { cartItems } = useContext(CartContext) || { cartItems: [], updateCartItem: () => {} }
 
   return (
     <>
@@ -24,14 +24,8 @@ const CartContent = () => {
                   pattern='[0-9]*'
                   max='99999'
                   min='1'
-                  value={item.quantity || 1}
-                  onChange={(event) => {
-                    const updatedQuantity = Number(event.target.value)
-
-                    if (updatedQuantity > 0) {
-                      item.quantity = updatedQuantity
-                    }
-                  }}
+                  value={item.quantity}
+                  onChange={() => {}}
                 />
 
                 <span className='text-sm my-auto'>${(item.quantity || 1) * parseFloat(item.price.toFixed(2))}</span>

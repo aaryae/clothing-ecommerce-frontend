@@ -44,11 +44,11 @@ const AllProductList = () => {
             productDetail={() => {
               handleProductDetail(product)
             }}
-          />{' '}
+          />
         </div>
       ))}
     </div>
   )
 }
 
-export default AllProductList
+export default AllProductList;
