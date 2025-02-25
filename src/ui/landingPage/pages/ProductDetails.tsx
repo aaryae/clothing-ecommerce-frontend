@@ -37,35 +37,17 @@ const ProductDetails = () => {
           <img src={displayProduct.image} alt='productimg' width={400} />
 
           <div className='px-4 flex flex-col'>
-            <div className='flex gap-3 flex-wrap'>
+            <div>
               <HeadingSecondary value={displayProduct.productHeading} />
-              <p className='text-sm py-3 my-auto h-full tracking-wider text-[#ad6343] font-bold'>
-                - ${displayProduct.price.toFixed(2)}
-              </p>
+              <p className='text-sm mt-5 tracking-wider text-[#ad6343] font-bold'>${displayProduct.price.toFixed(2)}</p>
             </div>
             <div>
-              <label htmlFor='size' className='pr-3 tracking-wider'>
-                Size
-              </label>
-              <select name='size' id='size' className='p-2 bg-white border-custom tracking-wide outline-none'>
-                <option className='p-2' value='small'>
-                  Small
-                </option>
-                <option className='p-2' value='medium'>
-                  Medium
-                </option>
-                <option className='p-2' value='large'>
-                  Large
-                </option>
-              </select>
-            </div>
-            <div className='py-2'>
               <label htmlFor='quantity' className='tracking-wider'>
                 Quantity
               </label>
-
+              <br />
               <input
-                className='border-custom outline-none m-1 w-[50px] text-center'
+                className='border-custom outline-none  w-[50px] text-center'
                 type='number'
                 pattern='[0-9]*'
                 max='99999'
@@ -75,7 +57,7 @@ const ProductDetails = () => {
               />
             </div>
             <button
-              className='border-custom p-1 py-2 my-1 border-[#ad6343] text-[#ad6343] tracking-wide text-custom font-extrabold'
+              className='border-custom p-1 py-2 my-1 mt-3 border-[#ad6343] text-[#ad6343] tracking-wide text-custom font-extrabold'
               type='button'
               onClick={handleProductCart}
             >
