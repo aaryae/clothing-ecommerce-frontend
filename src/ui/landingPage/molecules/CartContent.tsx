@@ -1,9 +1,14 @@
 import { CartContext } from 'context/cartContext'
+import { Trash } from 'lucide-react'
 import { useContext } from 'react'
 import Paragraph from '../atoms/Paragraph'
 
 const CartContent = () => {
-  const { cartItems, updateCartQuantity } = useContext(CartContext) || { cartItems: [], updateCartQuantity: () => {} }
+  const { cartItems, updateCartQuantity, removeFromCart } = useContext(CartContext) || {
+    cartItems: [],
+    updateCartQuantity: () => {},
+    removeFromCart: () => {},
+  }
 
   return (
     <>
@@ -15,7 +20,16 @@ const CartContent = () => {
 
             {/* Content */}
             <div className='p-1 w-full'>
-              <Paragraph value={item.productHeading} />
+              <div className='flex justify-between w-full'>
+                <Paragraph value={item.productHeading} />
+                <Trash
+                  size={20}
+                  color='#231b1b'
+                  strokeWidth={0.5}
+                  className='cursor-pointer'
+                  onClick={() => removeFromCart(item.id)}
+                />
+              </div>
               <span className='text-sm'>${item.price.toFixed(2)}</span>
               <br />
 
