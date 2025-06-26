@@ -1,7 +1,8 @@
 import { MenProductData, womenProductData } from '@data/productData/product.data'
 import { CartContext } from 'context/cartContext'
 import { CircleChevronLeft } from 'lucide-react'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { useNavigate, useParams } from 'react-router-dom'
 import HeadingSecondary from '../atoms/HeadingSecondary'
 import ProductInfo from '../molecules/ProductInfo'
@@ -14,10 +15,19 @@ const ProductDetails = () => {
 
   const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
 
+  useEffect(() => {
+    if (!product && !selectedProduct) {
+      toast.error('Product not found!')
+    }
+  }, [product, selectedProduct])
+
   const handleProductCart = () => {
     if (product && addToCart && setSelectedProduct) {
-      addToCart(product, quantityNumber) // Pass the correct quantity directly
+      addToCart(product, quantityNumber)
       setSelectedProduct(product)
+      toast.success('Product added to cart')
+    } else {
+      toast.error('Unable to add product to cart')
     }
   }
 
@@ -28,7 +38,7 @@ const ProductDetails = () => {
   const displayProduct = product || selectedProduct
 
   return (
-    <div className='my-32 max-w-3xl mx-auto flex gap-8 flex-wrap md:flex-nowrap lg:flex-nowrap justify-center '>
+    <div className='my-32 max-w-3xl mx-auto flex gap-8 flex-wrap md:flex-nowrap lg:flex-nowrap justify-center'>
       <span onClick={handlePrevClick} className='flex gap-2 cursor-pointer tracking-widest hover:underline'>
         <CircleChevronLeft /> prev
       </span>

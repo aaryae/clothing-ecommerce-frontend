@@ -7,6 +7,7 @@ import ProductDetails from '@ui/landingPage/pages/ProductDetails'
 import Register from '@ui/landingPage/pages/Register'
 import WomenProduct from '@ui/landingPage/pages/WomenProduct'
 import LandingTemplate from '@ui/landingPage/templates/Landing.template'
+import { Toaster } from 'react-hot-toast'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <Toaster position='bottom-right' />
       <RouterProvider router={router} />
     </>
   )

@@ -1,6 +1,7 @@
 import { CartContext } from 'context/cartContext'
 import { Trash } from 'lucide-react'
 import { useContext } from 'react'
+import { toast } from 'react-hot-toast'
 import Paragraph from '../atoms/Paragraph'
 
 const CartContent = () => {
@@ -10,10 +11,24 @@ const CartContent = () => {
     removeFromCart: () => {},
   }
 
+  const handleRemove = (id: string) => {
+    removeFromCart(id)
+    toast.success('Removed from cart')
+  }
+
+  const handleQuantityChange = (id: string, quantity: number) => {
+    if (quantity < 1) {
+      toast.error('Quantity must be at least 1')
+      return
+    }
+    updateCartQuantity(id, quantity)
+    toast.success('Quantity updated')
+  }
+
   return (
     <>
       {cartItems.map((item, index) => (
-        <div key={index}>
+        <div key={index} className='bg-transparent'>
           <div className='flex gap-4 mt-4 mx-5'>
             {/* Image */}
             <img className='h-[80px] p-1' src={item.image} alt={item.productHeading} height={100} />
@@ -22,15 +37,11 @@ const CartContent = () => {
             <div className='p-1 w-full'>
               <div className='flex justify-between w-full'>
                 <Paragraph value={item.productHeading} />
-                <Trash
-                  size={20}
-                  color='#231b1b'
-                  strokeWidth={0.5}
-                  className='cursor-pointer'
-                  onClick={() => removeFromCart(item.id)}
-                />
+                <div className='hover:text-red-700'>
+                  <Trash size={20} className='cursor-pointer' onClick={() => handleRemove(item.id)} />
+                </div>
               </div>
-              <span className='text-sm'>${item.price.toFixed(2)}</span>
+              <span className='text-sm tracking-wide'>${item.price.toFixed(2)}</span>
               <br />
 
               <div className='flex w-full justify-between'>
@@ -44,11 +55,13 @@ const CartContent = () => {
                   value={item.quantity}
                   onChange={(event) => {
                     const newQuantity = Number(event.target.value)
-                    updateCartQuantity(item.id, newQuantity)
+                    handleQuantityChange(item.id, newQuantity)
                   }}
                 />
 
-                <span className='text-sm my-auto'>${(item.quantity || 1) * parseFloat(item.price.toFixed(2))}</span>
+                <span className='text-sm tracking-wide my-auto'>
+                  ${(item.quantity || 1) * parseFloat(item.price.toFixed(2))}
+                </span>
               </div>
             </div>
           </div>
