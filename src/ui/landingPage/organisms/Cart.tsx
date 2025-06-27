@@ -4,6 +4,7 @@ import CartContent from '@ui/landingPage/molecules/CartContent'
 import { CartContext } from 'context/cartContext'
 import { ChevronLeft } from 'lucide-react'
 import { useContext, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen: () => void }) => {
   const { cartItems } = useContext(CartContext) || { cartItems: [] }
@@ -50,8 +51,10 @@ const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen:
             <Paragraph value='Subtotal' />
             <span className='text-custom font-bold'>${subtotal.toFixed(2)}</span>
           </div>
-          <div className='py-8 flex justify-center items-center'>
-            <Button value='View Cart' />
+          <div onClick={toggleCartOpen} className='py-8 flex justify-center items-center'>
+            <Link to={'/checkout'}>
+              <Button value='View Cart' />
+            </Link>
           </div>
         </div>
       </div>

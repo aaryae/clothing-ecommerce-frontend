@@ -1,5 +1,6 @@
 import About from '@ui/landingPage/pages/About'
 import AllProduct from '@ui/landingPage/pages/AllProduct'
+import Checkout from '@ui/landingPage/pages/Checkout'
 import LandingPage from '@ui/landingPage/pages/LandingPage'
 import Login from '@ui/landingPage/pages/Login'
 import MenProduct from '@ui/landingPage/pages/MenProduct'
@@ -22,6 +23,7 @@ function App() {
         { path: '/menproducts', element: <MenProduct /> },
         { path: '/products', element: <AllProduct /> },
         { path: '/products/:productId', element: <ProductDetails /> },
+        { path: '/checkout', element: <Checkout /> },
         { path: '/login', element: <Login /> },
         { path: '/register', element: <Register /> },
       ],
