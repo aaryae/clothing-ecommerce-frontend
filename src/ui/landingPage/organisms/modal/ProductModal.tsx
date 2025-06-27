@@ -4,35 +4,37 @@ import HeadingSecondary from '@ui/landingPage/atoms/HeadingSecondary'
 import { CartContext } from 'context/cartContext'
 import { X } from 'lucide-react'
 import { useContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import toast from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 
 interface ProductModalProps extends productCardInterface {
   onClose: () => void
 }
 
-const ProductModal = ({ image, productHeading, onClose }: ProductModalProps) => {
-  const { productId } = useParams()
+const ProductModal = ({ image, productHeading, id, onClose }: ProductModalProps) => {
   const { addToCart, setSelectedProduct } = useContext(CartContext) || {}
 
   const [quantity, setQuantity] = useState(1)
 
-  const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === productId)
+  const product = MenProductData.concat(womenProductData).find((product) => product.id.toString() === id)
 
   const handleProductCart = () => {
     if (product && addToCart && setSelectedProduct) {
+      toast.success('product added successfully')
+      onClose()
       addToCart(product, quantity)
       setSelectedProduct(product)
     }
   }
 
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50' onClick={onClose}>
-      <div className='flex bg-white p-8 rounded '>
+    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50'>
+      <div className='flex bg-white p-8 rounded'>
         <div className='w-[300px]'>
           <img src={image} alt='productImg' />
         </div>
 
-        <div className='px-4 flex flex-col   relative  '>
+        <div className='px-4 flex flex-col relative  '>
           <div className='float-right cursor-pointer absolute -right-5 -top-5 hover:text-red-700  ' onClick={onClose}>
             <X size={20} />
           </div>
@@ -63,7 +65,9 @@ const ProductModal = ({ image, productHeading, onClose }: ProductModalProps) => 
             className='border-custom p-1 my-1 border-[#5d6956] bg-[#5d6956] text-white hover:bg-[#505f47] tracking-wide text-sm font-bold'
             type='submit'
           >
-            Buy Now
+            <Link to='/checkout' className='w-full h-full'>
+              Buy Now
+            </Link>
           </button>
         </div>
       </div>

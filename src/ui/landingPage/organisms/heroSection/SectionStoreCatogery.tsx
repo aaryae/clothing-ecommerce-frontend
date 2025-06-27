@@ -25,7 +25,7 @@ const Sectionstorecategories = () => {
             <img className='hover:scale-105  ' src={image?.frontwomen ?? image.fallback} alt='imagemen' />
           </div>
           <Link
-            to='/womenproducts'
+            to='/menproducts'
             className='flex justify-center items-center font-bold tracking-widest my-2 py-2 text-xl'
           >
             Shop Men

@@ -3,7 +3,7 @@ import { CartContext } from 'context/cartContext'
 import { CircleChevronLeft } from 'lucide-react'
 import { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import HeadingSecondary from '../atoms/HeadingSecondary'
 import ProductInfo from '../molecules/ProductInfo'
 
@@ -73,12 +73,14 @@ const ProductDetails = () => {
             >
               Add to Cart
             </button>
+
             <button
               className='border-custom p-1 py-2 my-1 border-[#5d6956] bg-[#5d6956] text-white hover:bg-[#505f47] tracking-wide text-custom font-bold'
               type='submit'
             >
-              Buy Now
+              <Link to='/checkout'>Buy Now</Link>
             </button>
+
             <ProductInfo />
           </div>
         </>

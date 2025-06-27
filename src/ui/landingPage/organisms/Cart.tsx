@@ -25,7 +25,7 @@ const Cart = ({ cartOpen, toggleCartOpen }: { cartOpen: boolean; toggleCartOpen:
 
       {/* Cart */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[400px] bg-[#ffffffd2] transition-transform duration-300 ease-in-out transform ${
+        className={`fixed top-0 right-0 h-screen w-[400px] bg-[#dfdfdf] transition-transform duration-300 ease-in-out transform ${
           cartOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

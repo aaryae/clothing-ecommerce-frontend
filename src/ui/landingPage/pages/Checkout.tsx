@@ -43,7 +43,7 @@ const Checkout = () => {
     )
   }
 
-  const taxRate = 0.13 // 13% tax
+  const taxRate = 0.13 
   const taxAmount = subtotal * taxRate
   const total = subtotal + taxAmount
 
